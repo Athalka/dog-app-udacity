@@ -42393,8 +42393,12 @@ AAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question 2:</strong> This algorithmic choice necessitates that we communicate to the user that we accept human images only when they provide a clear view of a face (otherwise, we risk having unneccessarily frustrated users!). In your opinion, is this a reasonable expectation to pose on the user? If not, can you think of a way to detect humans in images that does not necessitate an image with a clearly presented face?</p>
-<p><strong>Answer:</strong></p>
-<p>For this challenge LBP Cascade classifier was tested , although human positive detection fell to 88% percent, it has better job as not detecting dogs as humans with %1 percent.</p>
+<p><strong>Answer:</strong>
+Clear view of face is required to properly detect humans or dogs. As most of the images trained by the system contain front face, using side of face or one eye or eyes closed images will not be able to detect face. 
+Front pose is reasonable for humans, as if an mobile is created likely they will use front camera and properly show face, it is not a burden for the user.
+In situations where clearly presented face is not available, alternative system would be to use more images of humans, where face is not clearly visible. 
+Given face detector is reasonably well, I would use this system as a secondary detection logic, first check if face is avaible, if so use standart face detector, then if not available use secondary system to see if he/she is human. Then go on with dog classifier system.
+For alternative face detection algorithm LBP Cascade classifier was tested , although human positive detection fell to 88% percent, it has better job as not detecting dogs as humans with %1 percent.</p>
 
 </div>
 </div>
@@ -44661,7 +44665,10 @@ test_{network} = bottleneck_features['test']</code></pre>
 
 </code></pre>
 <p><strong>Question 5:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  Describe why you think the architecture is suitable for the current problem.</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong> 
+Resnet 50 model was chosen. Resnet50 uses residual learning with 50 layers, where residual functions are used in n+x'th layer using input from n'th layer. Using this gives better accuracy. More layers can be used, impacting training speed. This architecture has more layers than VGG but has lower complexity.
+Resnet architecture was especially designed for face detection so it is proper to use this architecture.</p>
+<p><a href="https://arxiv.org/pdf/1512.03385.pdf">https://arxiv.org/pdf/1512.03385.pdf</a></p>
 
 </div>
 </div>
@@ -45173,10 +45180,10 @@ Likely due to some dog breeds being mixed, algorithm can not predict with higher
 
  
  
-<div id="92db6d5c-217c-4099-8693-9026bc4f0a77"></div>
+<div id="b62e5e48-ce6f-4381-abf8-bf6a563df98e"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#92db6d5c-217c-4099-8693-9026bc4f0a77');
+var element = $('#b62e5e48-ce6f-4381-abf8-bf6a563df98e');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "6add8093b0d04c489f24eb0fba29e242"}
@@ -46220,10 +46227,10 @@ SUVORK5CYII=
 
  
  
-<div id="6a74e9e8-2d1b-4ac2-8537-e977f3737836"></div>
+<div id="94caa901-8ece-44cf-b5db-fb29c4eccd38"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#6a74e9e8-2d1b-4ac2-8537-e977f3737836');
+var element = $('#94caa901-8ece-44cf-b5db-fb29c4eccd38');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "520c0a181f4c4d4089878eb5b8b6b0c4"}
@@ -47413,10 +47420,10 @@ vXNrjrxZs2bN3rk1R96sWbNm79yaI2/WrFmzd27NkTdr1qzZO7fmyJs1a9bsnVtz5M2aNWv2zq05
 
  
  
-<div id="f4711256-a386-48e9-bb7f-c9666dea7892"></div>
+<div id="21a8447d-13f4-4612-879e-773319e30126"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#f4711256-a386-48e9-bb7f-c9666dea7892');
+var element = $('#21a8447d-13f4-4612-879e-773319e30126');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "315f105fdea74e828df657512918f849"}
@@ -48407,10 +48414,10 @@ PXJbgH6xxRZb7JHbAvSLLbbYYo/c/n/sqcZL8d4h5gAAAABJRU5ErkJggg==
 
  
  
-<div id="f5d366d2-d973-4357-a779-526a91e39c4c"></div>
+<div id="8c54b3f2-c21a-4389-96e0-4731601be0ca"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#f5d366d2-d973-4357-a779-526a91e39c4c');
+var element = $('#8c54b3f2-c21a-4389-96e0-4731601be0ca');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "188b679482064ffc8994b2501bf85f4c"}
@@ -50671,10 +50678,10 @@ AAAASUVORK5CYII=
 
  
  
-<div id="5c6a52c7-bce5-4a61-a457-566e5ace6673"></div>
+<div id="646c3bf8-a9d8-4554-acec-8c9904186384"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#5c6a52c7-bce5-4a61-a457-566e5ace6673');
+var element = $('#646c3bf8-a9d8-4554-acec-8c9904186384');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "c046028fe5b546a59374523268a44c1c"}
@@ -53118,10 +53125,10 @@ ev7Xb//+LlkmSnmnhdS73W73X9z7DF/tdrvdbg/U3W63ey97oO52u9072QN1t9vt3skeqLvdbvdO
 
  
  
-<div id="2df26b6c-e667-4800-b592-11997a9ad8cb"></div>
+<div id="3a8ec0f1-4a57-4606-a222-75cb3051cbf6"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#2df26b6c-e667-4800-b592-11997a9ad8cb');
+var element = $('#3a8ec0f1-4a57-4606-a222-75cb3051cbf6');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "f6913cffc8064b14af51b48b3df5e70d"}
@@ -54971,10 +54978,10 @@ ebmw8Q0AAAAASUVORK5CYII=
 
  
  
-<div id="9c2e9772-fd90-4510-a41a-bb7e47d35ad1"></div>
+<div id="20e9f1f9-70fd-4bd8-8c89-be390d40017b"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#9c2e9772-fd90-4510-a41a-bb7e47d35ad1');
+var element = $('#20e9f1f9-70fd-4bd8-8c89-be390d40017b');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "2e0301e2f3304bd59924fa06ecb0b82f"}
@@ -56200,10 +56207,10 @@ ogAAAABJRU5ErkJggg==
 
  
  
-<div id="646ef26e-a5b7-4ee1-ab0d-161a363e1c21"></div>
+<div id="9f423b7c-89d6-488d-ae72-d4b179ed0855"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#646ef26e-a5b7-4ee1-ab0d-161a363e1c21');
+var element = $('#9f423b7c-89d6-488d-ae72-d4b179ed0855');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "222abab9bd2744649d2a60525ffbf30e"}
